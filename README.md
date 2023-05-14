@@ -20,11 +20,12 @@ Continuando dal [precedente workshop](https://github.com/mohole/vue-workshop) ri
 - [TailwindCSS](https://tailwindcss.com/) - CSS as utility classes
 - [DaisyUI](https://daisyui.com/) - UI components built on top of TailwindCSS
 - [date-fns](https://date-fns.org/) - JS utility for date formatting
-- [Neon](https://neon.tech/) - serverless Postgres DB
 
 ## API
 
-The API consumed by the application is [https://rickandmortyapi.com/](https://rickandmortyapi.com/) , which is a public and free API useful for learning and practice, based on the popular animated series.
+For this project we are using a custom mock API available at [https://mohole-nextws-api.azurewebsites.net/](https://mohole-nextws-api.azurewebsites.net/). It's a very simple project built with [json-server](https://github.com/typicode/json-server) and is hosted on [Azure](https://azure.microsoft.com/) free tier.
+
+More explanation on the data exposed in the [docs](/fundamentals/2.project.md).
 
 ## Table of Contents
 
@@ -47,13 +48,16 @@ This project can be deployed on any Node.js hosting, but to keep things simple &
 
 ## Repository structure
 
-| Folder          | Description                          |
-| --------------- | ------------------------------------ |
-| `(root)`        | main config files                    |
-| `/fundamentals` | theory introduction files            |
-| `/components`   | components for UI                    |
-| `/pages`        | components that will behave as pages |
-| `/layouts`      | shared layout elements               |
+| Folder            | Description                                   |
+| ----------------- | --------------------------------------------- |
+| `(root)`          | main config files                             |
+| `/fundamentals`   | theory introduction files                     |
+| `/public`         | static files served with the project (images) |
+| `/app`            | the main source folder                        |
+| `/app/components` | components for UI                             |
+| `/app/add`        | the "add new" page                            |
+| `/app/edit/[id]`  | the "edit" page                               |
+| `/app/utils`      | shared JS utilities                           |
 
 ## Getting started
 
@@ -66,7 +70,7 @@ $ git clone https://github.com/mohole/next-workshop
 change to project folder
 
 ```bash
-$ cd vue-workshop
+$ cd next-workshop
 ```
 
 install the dependencies
