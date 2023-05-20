@@ -1,3 +1,4 @@
+import { Form } from 'app/components/form';
 
 const getData = async (id) => {
   const res = await fetch(`https://mohole-nextws-api.azurewebsites.net/moholemon/${id}`)
@@ -8,9 +9,20 @@ const getData = async (id) => {
 export default async function Edit({params}) {
   const data = await getData(params.id)
 
+  const submit = async (data) => {
+    "use server";
+    
+    console.log(data)
+  }
+
   return (
-    <>
-      <p>{JSON.stringify(data, null, 2)}</p>
-    </>
+    <div className="card w-full bg-base-100 shadow-xl">
+      <section className="card-body">
+        <h1 className="text-3xl font-bold">
+          Modifica la scheda
+        </h1>
+        <Form edit={true} submit={submit} data={data} />
+      </section>
+    </div>
   )
 }

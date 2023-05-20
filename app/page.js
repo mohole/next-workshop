@@ -10,7 +10,7 @@ const getData = async () => {
 
 export default async function Home() {
   const data = await getData()
-  const items = Array(7).fill(data).flat()
+  const items = Array(5).fill(data).flat()
 
   return (
     <>
