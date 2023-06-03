@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { formatDistance } from 'date-fns'
+import { it } from 'date-fns/locale'
 
 export const Card = ({ data }) => (
   <article className="card w-full bg-base-100 shadow-xl">
@@ -16,6 +18,10 @@ export const Card = ({ data }) => (
           </span>
         ))}
       </p>
+      <p><small>Registrato {formatDistance(new Date(data.creation), new Date(), { 
+        locale: it ,
+        addSuffix: true
+      })}</small></p>
       <div className="card-actions flex mt-2">
         <Link href={`/edit/${data.id}`} className="btn btn-primary flex-1">
           <svg

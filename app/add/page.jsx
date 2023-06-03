@@ -12,9 +12,6 @@ export default function Add() {
    * https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions
    */
   const submit = async (data) => {
-
-    console.log(data)
-
     const res = await fetch("https://mohole-nextws-api.azurewebsites.net/moholemon", {
       method: "POST",
       headers: {

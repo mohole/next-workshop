@@ -1,15 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from 'next/navigation';
 
 export const Form = ({ edit, submit, data }) => {
+  const router = useRouter();
+
   const [name, setName] = useState(data?.name || "");
   const [picture, setPicture] = useState(data?.picture || "");
   const [description, setDescription] = useState(data?.description || "");
   const [age, setAge] = useState(data?.age || 1);
   const [attacks, setAttacks] = useState(data?.attacks || []);
 
-  const createObject = (id) => {
+  const createObject = () => {
     return {
       id: data?.id,
       name,
@@ -24,8 +27,18 @@ export const Form = ({ edit, submit, data }) => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    const obj = createObject(data?.id);
+    const obj = createObject();
     submit(obj)
+  }
+
+  const onDelete = async () => {
+    const res = await fetch(`https://mohole-nextws-api.azurewebsites.net/moholemon/${data.id}`, {
+      method: "DELETE",
+    })
+    await res.json()
+    
+    router.push(`/`)
+    router.refresh()
   }
 
   return (
@@ -88,7 +101,7 @@ export const Form = ({ edit, submit, data }) => {
 
       <div className="my-7 flex gap-5">
         <button className="btn btn-primary btn-lg">{edit ? 'Modifica scheda' : 'Crea scheda' }</button>
-        {edit && <button className="btn btn-error btn-lg">Elimina scheda</button> }
+        {edit && <button className="btn btn-error btn-lg" onClick={onDelete}>Elimina scheda</button> }
       </div>
     </form>
   );
