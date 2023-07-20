@@ -23,7 +23,6 @@ export const Message = ({
         {user} <time className="text-xs opacity-50">{time}</time>
       </div>
       <div className="chat-bubble">{message}</div>
-      {/* <div className="chat-footer opacity-50">Delivered</div> */}
     </div>
   );
 };

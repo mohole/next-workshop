@@ -78,16 +78,17 @@ you can now check your application at `http://localhost:3000`.
 
 ## Where to go from here
 
-Feel free to enhance and add features to this project since it's just a sample to give you a glimpse on the basics functionalities of Nuxt and Vue:
+Feel free to enhance and add features to this project since it's just a sample to give you a glimpse on how to combine these tools to create a simple product:
 
 - design a better UI (_with or without Tailwind_)
-- integrate other APIs from the service
-- add filters for easily find content
-- enhance the pagination component
+- add a page to manage (_add, edit, remove_) the channels
+- add roles to users (_example: normal users can just chat, admins can manage the channels_)
+- add a button to edit e message
+- add "reply to message" functionality
 
 or ultimately...
 
-- re-use the code of this project with a **completely different data source** ([https://github.com/public-api-lists/public-api-lists](https://github.com/public-api-lists/public-api-lists))
+- re-use the code of this project with a **completely different service or data source** ([https://github.com/public-api-lists/public-api-lists](https://github.com/public-api-lists/public-api-lists))
 
 ## License
 
