@@ -1,6 +1,6 @@
 import { Message } from "@/components/Message";
 
-interface Message {
+type Message = {
   user: string;
   text: string;
   timestamp: string;

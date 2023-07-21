@@ -1,9 +1,10 @@
-interface Props {
+type Props = {
   url?: string;
   name: string;
-}
+};
 
 export const Avatar = ({ url, name }: Props): React.ReactElement => {
+  // get the first letter of the first and last name
   const letter: string = name
     .split(" ")
     .filter((_e: string, i: number): boolean => i < 2)
@@ -26,5 +27,6 @@ export const Avatar = ({ url, name }: Props): React.ReactElement => {
     </div>
   );
 
+  // if there is an image url, render the image avatar, otherwise render the letters
   return url ? image : placeholder;
 };

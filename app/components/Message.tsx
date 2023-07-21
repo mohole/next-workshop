@@ -1,6 +1,6 @@
 import { Avatar } from "./Avatar";
 
-interface Props {
+type Props = {
   isOwner: boolean;
   user: string;
   message: string;

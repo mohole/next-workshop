@@ -82,6 +82,7 @@ Feel free to enhance and add features to this project since it's just a sample t
 
 - design a better UI (_with or without Tailwind_)
 - add a page to manage (_add, edit, remove_) the channels
+- handling exceptions (_messages list didn't load, user trying to access a deleted channel, etc..._)
 - add roles to users (_example: normal users can just chat, admins can manage the channels_)
 - add a button to edit e message
 - add "reply to message" functionality
@@ -91,5 +92,6 @@ or ultimately...
 - re-use the code of this project with a **completely different service or data source** ([https://github.com/public-api-lists/public-api-lists](https://github.com/public-api-lists/public-api-lists))
 
 ## License
+Code released under the [MIT License](LICENSE).
 
-Released under the [MIT License](LICENSE).
+All of the uncredited images have been generated with [Midjourney](https://www.midjourney.com/).
