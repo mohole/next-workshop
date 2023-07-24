@@ -1,18 +1,27 @@
-import { Header } from "@/components/Header";
+"use client";
+
 import supabase from "@/utils/supabase";
-import { SignIn } from "@/components/SignIn";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
+export default function Home() {
+  const router = useRouter();
 
-export default async function Home() {
-  const { data, error } = await supabase.auth.getUser()
+  // get the the first channel from Supabase and redirect to it
+  const getChannels = async (): Promise<void> => {
+    const { data } = await supabase.from("channels").select();
 
-  console.log('--user', data, error)
+    const first: string = (data && data[0].id) || "";
+    router.push(`/channel/${first}`);
+  };
+
+  useEffect(() => {
+    getChannels();
+  }, []);
+
   return (
     <>
-      <Header />
-      <main className="p-6 pb-10 bg-slate-50">
-        <SignIn />
-      </main>
+      <p className="py-10 text-center">loading data...</p>
     </>
   );
 }

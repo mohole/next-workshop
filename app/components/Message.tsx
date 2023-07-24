@@ -14,6 +14,7 @@ export const Message = ({
   timestamp,
 }: Props): React.ReactElement => {
   const align: string = ["chat", isOwner ? "chat-start" : "chat-end"].join(" ");
+  const color: string = ["chat-bubble", isOwner && "chat-bubble-accent"].join(" ");
   const time: string = new Date(timestamp).toLocaleString();
 
   return (
@@ -22,7 +23,7 @@ export const Message = ({
       <div className="chat-header">
         {user} <time className="text-xs opacity-50">{time}</time>
       </div>
-      <div className="chat-bubble">{message}</div>
+      <div className={color}>{message}</div>
     </div>
   );
 };

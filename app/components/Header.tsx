@@ -7,11 +7,7 @@ export const Header = (): React.ReactElement => {
         <a className="btn btn-ghost normal-case text-xl">Mohole chat</a>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <SignOut />
-          </li>
-        </ul>
+        <SignOut />
       </div>
     </header>
   );
