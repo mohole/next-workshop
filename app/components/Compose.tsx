@@ -2,12 +2,18 @@
 
 import supabase from "@/utils/supabase";
 import { FormEvent, useEffect, useState } from "react";
+import { Message } from "@/utils/types";
 import { SignIn } from "./SignIn";
 
-export const Compose = (): React.ReactElement => {
+type Props = {
+  current: string
+}
+
+export const Compose = ({ current }: Props): React.ReactElement => {
   const [loggedUser, setLoggedUser] = useState<any>();
   const [text, setText] = useState<string>("");
 
+  // getting the logged user
   const getUser = async () => {
     const {
       data: { user },
@@ -16,9 +22,25 @@ export const Compose = (): React.ReactElement => {
     setLoggedUser(user?.user_metadata);
   };
 
-  const onSubmit = (e: FormEvent): void => {
+  // sending the message to Supabase
+  const onSubmit = async (e: FormEvent): Promise<void> => {
     e.preventDefault();
-    setText("");
+
+    const newMessage: Message = {
+      text,
+      created_at: new Date().toISOString(),
+      channel: current,
+      user: {
+        name: loggedUser?.full_name,
+        photo: loggedUser?.avatar_url,
+      }
+    }
+
+    const { error } = await supabase
+      .from("messages")
+      .insert(newMessage);
+
+    !error && setText("");
   };
 
   useEffect(() => {

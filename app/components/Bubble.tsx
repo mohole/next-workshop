@@ -1,13 +1,14 @@
+import { User } from "@/utils/types";
 import { Avatar } from "./Avatar";
 
 type Props = {
   isOwner: boolean;
-  user: string;
+  user: User;
   message: string;
   timestamp: string;
 }
 
-export const Message = ({
+export const Bubble = ({
   isOwner,
   user,
   message,
@@ -19,9 +20,9 @@ export const Message = ({
 
   return (
     <div className={align}>
-      <Avatar name={user} />
+      <Avatar name={user.name} url={user.photo} />
       <div className="chat-header">
-        {user} <time className="text-xs opacity-50">{time}</time>
+        {user.name} <time className="text-xs opacity-50">{time}</time>
       </div>
       <div className={color}>{message}</div>
     </div>

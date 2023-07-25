@@ -7,12 +7,12 @@ export type Channel = {
 
 export type User = {
   name: string, 
-  photo: string,
+  photo?: string,
 }
 
 export type Message = {
   user: User,
   text: string,
-  timestamp: string,
+  created_at: string,
   channel: string
 }
