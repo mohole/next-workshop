@@ -1,8 +1,9 @@
 "use client";
 
 import supabase from "@/utils/supabase";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import { Message } from "@/utils/types";
+import { getLoggedUser } from "@/utils/getUser";
 import { SignIn } from "./SignIn";
 
 type Props = {
@@ -10,17 +11,8 @@ type Props = {
 }
 
 export const Compose = ({ current }: Props): React.ReactElement => {
-  const [loggedUser, setLoggedUser] = useState<any>();
+  const loggedUser = getLoggedUser();
   const [text, setText] = useState<string>("");
-
-  // getting the logged user
-  const getUser = async () => {
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-
-    setLoggedUser(user?.user_metadata);
-  };
 
   // sending the message to Supabase
   const onSubmit = async (e: FormEvent): Promise<void> => {
@@ -42,10 +34,6 @@ export const Compose = ({ current }: Props): React.ReactElement => {
 
     !error && setText("");
   };
-
-  useEffect(() => {
-    getUser();
-  }, []);
 
   return (
     <footer className="fixed left-0 bottom-0 p-4 w-full">

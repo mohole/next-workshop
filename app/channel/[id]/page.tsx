@@ -3,7 +3,7 @@ import { Compose } from "@/components/Compose";
 import { Conversation } from "@/components/Conversation";
 import { Header } from "@/components/Header";
 import supabase from "@/utils/supabase";
-import { Channel, Message } from "@/utils/types";
+import { Channel } from "@/utils/types";
 
 export default async function Channel({ params }: { params: { id: string } }) {
   // getting all the channels from Supabase
@@ -30,7 +30,7 @@ export default async function Channel({ params }: { params: { id: string } }) {
       <main className="p-6 pb-10">
         <Select channels={channels || []} current={params.id} />
         <h2 className="font-bold text-lg mb-4">#{name}</h2>
-        <Conversation messages={messages || []} />
+        <Conversation initialMessages={messages || []} />
         <Compose current={id} />
       </main>
     </>

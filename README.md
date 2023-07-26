@@ -84,7 +84,8 @@ Feel free to enhance and add features to this project since it's just a sample t
 - add a page to manage (_add, edit, remove_) the channels
 - handling exceptions (_messages list didn't load, user trying to access a deleted channel, etc..._)
 - add roles to users (_example: normal users can just chat, admins can manage the channels_)
-- add a button to edit e message
+- use fine-grained RLS policies to not show messages to anonymouse users
+- add a button/gesture to edit e message
 - add "reply to message" functionality
 
 or ultimately...

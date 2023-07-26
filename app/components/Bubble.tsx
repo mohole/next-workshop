@@ -16,7 +16,7 @@ export const Bubble = ({
 }: Props): React.ReactElement => {
   const align: string = ["chat", isOwner ? "chat-start" : "chat-end"].join(" ");
   const color: string = ["chat-bubble", isOwner && "chat-bubble-accent"].join(" ");
-  const time: string = new Date(timestamp).toLocaleString();
+  const time: string = new Date(timestamp).toLocaleString("it-IT");
 
   return (
     <div className={align}>

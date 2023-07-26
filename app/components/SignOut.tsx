@@ -1,30 +1,18 @@
 "use client";
 
 import supabase from "@/utils/supabase";
-import { useEffect, useState } from "react";
+import { getLoggedUser } from "@/utils/getUser";
 import { useRouter } from 'next/navigation'
 
 export const SignOut = (): React.ReactElement => {
-  const [loggedUser, setLoggedUser] = useState<any>();
   const router = useRouter()
+  const loggedUser = getLoggedUser();
 
+  // signout the user and redirect the application to the root page
   const doSignOut = async () => {
-    setLoggedUser(null);
     const { error } = await supabase.auth.signOut();
     !error && router.push('/')
   };
-
-  const getUser = async () => {
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-
-    setLoggedUser(user?.user_metadata);
-  };
-
-  useEffect(() => {
-    getUser();
-  }, []);
 
   return (
     loggedUser ? <>

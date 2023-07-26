@@ -5,11 +5,11 @@ import supabase from "@/utils/supabase";
 export const SignIn = (): React.ReactElement => {
   // start the Github signin flow
   const doSignIn = async () => {
-    const { data, error } = await supabase.auth.signInWithOAuth({
+    const { error } = await supabase.auth.signInWithOAuth({
       provider: "github",
     });
 
-    console.log("--data", data, error);
+    error && console.error(error);
   };
 
   return (

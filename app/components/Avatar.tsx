@@ -11,6 +11,7 @@ export const Avatar = ({ url, name }: Props): React.ReactElement => {
     .map((e: string): string => e.charAt(0).toUpperCase())
     .join("");
 
+  // image variant
   const image: JSX.Element = (
     <div className="chat-image avatar">
       <div className="w-10 rounded-full">
@@ -18,7 +19,8 @@ export const Avatar = ({ url, name }: Props): React.ReactElement => {
       </div>
     </div>
   );
-
+  
+  // initial letters variant
   const placeholder: JSX.Element = (
     <div className="chat-image avatar placeholder">
       <div className="bg-neutral-focus text-neutral-content rounded-full w-10">
