@@ -2,7 +2,7 @@
 
 import { Bubble } from "@/components/Bubble";
 import { Message } from "@/utils/types";
-import { getLoggedUser } from "@/utils/getUser";
+import { useLoggedUser } from "@/utils/getUser";
 import { useEffect, useRef, useState } from "react";
 import supabase from "@/utils/supabase";
 
@@ -17,7 +17,7 @@ export const Conversation = ({
   const elementRef = useRef<HTMLUListElement>(null);
 
   const [messages, setMessages] = useState<Array<Message>>(initialMessages);
-  const loggedUser = getLoggedUser();
+  const loggedUser = useLoggedUser();
 
   // adding a new message to the list
   const addMessage = (payload: any) => {

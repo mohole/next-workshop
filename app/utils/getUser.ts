@@ -7,7 +7,7 @@ type LoggedUser = {
   avatar_url: string;
 };
 
-export const getLoggedUser = (): LoggedUser => {
+export const useLoggedUser = (): LoggedUser => {
   const [loggedUser, setLoggedUser] = useState<any>(null);
 
   // retrieve logged in user (meta)data

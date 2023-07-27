@@ -17,14 +17,13 @@ In this one-day workshop we will combine React, Next.js, Typescript and Tailwind
 - [Vercel](https://vercel.com/) free account
 - [Supabase](https://supabase.com/) free account
 
-## What we are using
+## What are we using
 
 - [React v18](https://react.dev/) - reactive UI library
 - [Next.js v13](https://nextjs.org/) - web framework for React
 - [Typescript](https://www.typescriptlang.org/) - JavaScript with syntax for types
 - [TailwindCSS](https://tailwindcss.com/) - CSS as utility classes
 - [DaisyUI](https://daisyui.com/) - UI components built on top of TailwindCSS
-- [date-fns](https://date-fns.org/) - JS utility for date formatting
 - [Supabase](https://supabase.com/) - open source Firebase alternative (*we are using it for the **Database** and **Authentication** features*)
 
 ## Table of Contents

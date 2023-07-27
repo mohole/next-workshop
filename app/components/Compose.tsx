@@ -3,7 +3,7 @@
 import supabase from "@/utils/supabase";
 import { FormEvent, useState } from "react";
 import { Message } from "@/utils/types";
-import { getLoggedUser } from "@/utils/getUser";
+import { useLoggedUser } from "@/utils/getUser";
 import { SignIn } from "./SignIn";
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
 }
 
 export const Compose = ({ current }: Props): React.ReactElement => {
-  const loggedUser = getLoggedUser();
+  const loggedUser = useLoggedUser();
   const [text, setText] = useState<string>("");
 
   // sending the message to Supabase
