@@ -24,8 +24,8 @@ export const Conversation = ({
     console.log(payload);
     console.log(messages.length);
     if (payload.eventType === "INSERT") {
-      const updated: Array<Message> = [...messages, payload.new as Message];
-      setMessages(updated);
+      //const updated: Array<Message> = [...messages, payload.new as Message];
+      setMessages((prev) => [...prev, payload.new as Message]);
     }
   };
 
@@ -46,7 +46,7 @@ export const Conversation = ({
     
     // scrolling to the bottom of the list
     current.scrollTop = current.scrollHeight;
-  }, [messages]);
+  }, []);
 
   return (
     <ul className="h-96 overflow-y-scroll" ref={elementRef}>
