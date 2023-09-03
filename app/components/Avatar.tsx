@@ -1,15 +1,17 @@
-interface Props {
+type Props = {
   url?: string;
   name: string;
-}
+};
 
 export const Avatar = ({ url, name }: Props): React.ReactElement => {
+  // get the first letter of the first and last name
   const letter: string = name
     .split(" ")
     .filter((_e: string, i: number): boolean => i < 2)
     .map((e: string): string => e.charAt(0).toUpperCase())
     .join("");
 
+  // image variant
   const image: JSX.Element = (
     <div className="chat-image avatar">
       <div className="w-10 rounded-full">
@@ -17,7 +19,8 @@ export const Avatar = ({ url, name }: Props): React.ReactElement => {
       </div>
     </div>
   );
-
+  
+  // initial letters variant
   const placeholder: JSX.Element = (
     <div className="chat-image avatar placeholder">
       <div className="bg-neutral-focus text-neutral-content rounded-full w-10">
@@ -26,5 +29,6 @@ export const Avatar = ({ url, name }: Props): React.ReactElement => {
     </div>
   );
 
+  // if there is an image url, render the image avatar, otherwise render the letters
   return url ? image : placeholder;
 };
