@@ -1,34 +1,88 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# React + Next.js Workshop - 14/09/2023 @ Mohole
 
-## Getting Started
+![workshop poster](_images/hero.png)
+<small>_image generated with Microsoft Designer_</small>
 
-First, run the development server:
+`[ITA]`
+Durante questa giornata, esploreremo come utilizzare la potenza di ChatGPT, uno dei più avanzati modelli di generazione del linguaggio naturale, all'interno di un'applicazione web moderna. Utilizzeremo React insieme a Next.js, un framework di sviluppo React, per creare un'applicazione web altamente interattiva e coinvolgente.
+
+`[EN]`
+During this day, we will explore how to harness the power of ChatGPT, one of the most advanced natural language generation models, within a modern web application. We will be using React along with Next.js, a React development framework, to create a highly interactive and engaging web application.
+
+## Requirements
+
+- [Node.js](https://nodejs.org/) v16+
+- [VS Code](https://code.visualstudio.com/)
+- [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) (_browser extension_)
+- [Vercel](https://vercel.com/) free account
+- [OpenAI](hhttps://platform.openai.com/) free account
+
+## What are we using
+
+- [React v18](https://react.dev/) - reactive UI library
+- [Next.js v13](https://nextjs.org/) - web framework for React
+- [Typescript](https://www.typescriptlang.org/) - JavaScript with syntax for types
+- [TailwindCSS](https://tailwindcss.com/) - CSS as utility classes
+- [DaisyUI](https://daisyui.com/) - UI components built on top of TailwindCSS
+- [OpenAI SDK](hhttps://www.npmjs.com/package/openai) - the official Node.js OpenAI client to interact with the ChatGPT service
+
+## Table of Contents
+
+- icebreaking
+- intro + high level concepts
+- setup the project locally
+- working with environment variables
+- breaking up the UI into components
+- _-- lunch break --_
+- reading & writing messages
+- publish the project
+- Q&A
+- closing
+
+## Publishing
+
+This project can be deployed on any Node.js hosting, but to keep things simple & easy we will use the [Vercel free tier](https://vercel.com/pricing).
+
+Since we are using Supabase, there is no need to take any action for the backend & database. However, **it is very important to not commit the Supabase anon key** in the repository but using `.env` files and the environment settings in Vercel.
+
+## Getting started
+
+Clone the repo
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+$ git clone https://github.com/mohole/next-workshop
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+change to project folder
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+$ cd next-workshop
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+install the dependencies
 
-## Learn More
+```bash
+$ npm ci
+```
 
-To learn more about Next.js, take a look at the following resources:
+start the local development server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+$ npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+you can now check your application at `http://localhost:3000`.
 
-## Deploy on Vercel
+## Where to go from here
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Feel free to enhance and add features to this project since it's just a sample to give you a glimpse on how to combine these tools to create a simple product:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- design a better UI (_with or without Tailwind_)
+- handling exceptions (_free quota reach, connection, etc..._)
+- preserve chat history (_and add a DB_)
+- use a different ML model
+
+## License
+Code released under the [MIT License](LICENSE).
+
+All of the uncredited images have been generated with [Midjourney](https://www.midjourney.com/).
