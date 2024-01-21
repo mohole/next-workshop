@@ -1,34 +1,87 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# React + Next.js Workshop - 23/01/2024 @ Mohole
 
-## Getting Started
+![workshop poster](_images/hero.png)
+<small>_image generated with Microsoft Designer_</small>
 
-First, run the development server:
+`[ITA]`
+
+## Requirements
+
+- [Node.js](https://nodejs.org/) v18+
+- [VS Code](https://code.visualstudio.com/)
+- [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) (_browser extension_)
+- [*OPTIONAL*] [Vercel](https://vercel.com/) free account
+
+## What we are using
+
+- [React v18](https://react.dev/) - reactive UI library
+- [Next.js v14](https://nextjs.org/) - web framework for React
+- [modern-normalize](https://github.com/sindresorhus/modern-normalize) - normalize browser's default styles
+- [tailwindcss-preflight](https://github.com/grievouz/tailwindcss-preflight) - apply some basic global rules
+
+## API
+
+The API consumed by the application is [https://rickandmortyapi.com/](https://rickandmortyapi.com/) , which is a public and free API useful for learning and practice, based on the popular animated series.
+
+## Table of Contents
+
+- icebreaking
+- intro + high level concepts
+- setup the project
+- creating the first page
+- _-- lunch break --_
+- preparing more components
+- pagination
+- publish the project
+- [*optional*] live example integrating WordPress
+- Q&A
+- closing
+
+## Publishing
+
+This project can be deployed on any Node.js hosting, but to keep things simple & easy we will use the [Vercel free tier](https://vercel.com/pricing).
+
+## Local development
+
+Clone the repo
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+$ git clone https://github.com/mohole/next-workshop
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+change to project folder
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+$ cd next-workshop
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+install the dependencies
 
-## Learn More
+```bash
+$ npm ci
+```
 
-To learn more about Next.js, take a look at the following resources:
+start the local development server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+$ npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+you can now check your application at `http://localhost:3000`.
 
-## Deploy on Vercel
+## Where to go from here
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Feel free to enhance and add features to this project since it's just a sample to give you a glimpse on the basics functionalities of Nuxt and Vue:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- design a better UI
+- integrate other APIs from the service
+- add filters for easily find content
+- enhance the pagination component
+
+or ultimately...
+
+- re-use the code of this project with a **completely different data source** ([https://github.com/public-api-lists/public-api-lists](https://github.com/public-api-lists/public-api-lists))
+
+## License
+
+Released under the [MIT License](LICENSE).

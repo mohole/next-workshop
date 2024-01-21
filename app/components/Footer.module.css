@@ -1,0 +1,10 @@
+.footer {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  padding: 24px;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.8rem;
+  border-top: 1px dashed rgba(0, 0, 0, 0.2);
+}

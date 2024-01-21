@@ -1,26 +1,26 @@
-import { Card } from "./components/Card";
-import { Hero } from "./components/Hero";
+import { ListCharacters } from "./components/ListCharacters"
+import { Pagination } from "./components/Pagination"
 
+/**
+ * This method get the data from the API on server side
+ */
 const getData = async () => {
-  const res = await fetch("https://mohole-nextws-api.azurewebsites.net/moholemon")
+  const res = await fetch('https://rickandmortyapi.com/api/character')
   const data = await res.json()
   return data
 }
 
+/**
+ * The page component that will be rendered when the data is ready
+ */
 export default async function Home() {
-  const items = await getData()
+  const data = await getData()
 
   return (
-    <>
-      <Hero />
-      <section className="my-8 px-6">
-        <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          { /* items.map((item, index) => <li key={index}>{item.name}</li> ) */ }
-          { items.map((item, index) => <li key={index}>
-            <Card data={item} />
-          </li> ) }
-        </ul>
-      </section>
-    </>
+    <main>
+      {/* <p>pages {data.info.pages}, characters {data.info.count}, page items {data.results.length}</p> */}
+      <ListCharacters characters={data.results} />
+      <Pagination prev={data.info.prev} next={data.info.next} />
+    </main>
   )
 }

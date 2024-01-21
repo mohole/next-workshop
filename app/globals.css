@@ -1,3 +1,30 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import '../node_modules/modern-normalize/modern-normalize.css';
+@import '../node_modules/tailwindcss-preflight/preflight.css';
+
+/**
+* Global CSS variables
+* palette https://coolors.co/3c3744-090c9b-3066be-b4c5e4-fbfff1
+* --red created as complementary color by Copilot
+*/
+:root {
+  --grey: rgb(60, 55, 68);
+  --white: #FBFFF1;
+  --strong: #090C9B;
+  --normal: #3066BE;
+  --light: #B4C5E4;
+  --red: #BE4030;
+}
+
+/**
+* Global styles
+*/
+html {
+  background-color: var(--white);
+  color: var(--grey);
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px 0;
+}

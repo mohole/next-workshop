@@ -1,14 +1,12 @@
-import Link from "next/link";
+import styles from "./Header.module.css";
 
 export const Header = () => {
   return (
-    <header className="navbar bg-neutral text-neutral-content">
-      <div className="container mx-auto flex justify-between">
-        <h1>
-          <Link href="/" className="btn btn-ghost normal-case text-xl">Moholemon</Link>
-        </h1>
-        <Link href="/add" className="btn">+ Crea</Link>
-      </div>
-    </header>
+    <div className={styles.wrapper}>
+      <header className={styles.header}>
+        <h1 className={styles.title}>Rick & Morty</h1>
+        <small>catalogo personaggi</small>
+      </header>
+    </div>
   );
 };

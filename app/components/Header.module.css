@@ -1,0 +1,19 @@
+.wrapper {
+  background-color: var(--grey);
+  color: var(--white);
+
+  & .header {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    gap: 30px;
+
+    & .title {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  }
+}
