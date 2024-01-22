@@ -1,9 +1,7 @@
 # React + Next.js Workshop - 23/01/2024 @ Mohole
 
-![workshop poster](_images/hero.png)
-<small>_image generated with Microsoft Designer_</small>
-
-`[ITA]`
+![workshop poster](docs/img/cover.webp)
+<small>_image generated with Midjourney v6_</small>
 
 ## Requirements
 
