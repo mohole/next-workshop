@@ -1,14 +1,18 @@
-
 import styles from "./ListCharacters.module.css";
 
 export const ListCharacters = ({ characters }) => {
   const size = 300;
 
   const getStatus = (status) => {
-    const list = [styles.badge]
-    status === 'Alive' ? list.push(styles.alive) : list.push(styles.dead)
-    return list.join(' ')
-  }
+    /**
+     * This method return the class name for the badge based on the status
+     */
+    const list = [
+      styles.badge,
+      status === "Alive" ? styles.alive : styles.dead, // This is a ternary operator, acts as an if/else statement
+    ];
+    return list.join(" ");
+  };
 
   return (
     <ul className={styles.listCharacters}>
@@ -29,4 +33,4 @@ export const ListCharacters = ({ characters }) => {
       ))}
     </ul>
   );
-}
+};

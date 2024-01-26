@@ -5,7 +5,9 @@ import { Pagination } from "./../../components/Pagination";
  * This method get the data from the API on server side
  */
 const getData = async (page) => {
-  const res = await fetch(`https://rickandmortyapi.com/api/character/?page=${page}`);
+  const res = await fetch(
+    `https://rickandmortyapi.com/api/character/?page=${page}`
+  );
   const data = await res.json();
   return data;
 };
@@ -14,6 +16,9 @@ const getData = async (page) => {
  * The page component that will be rendered when the data is ready
  */
 export default async function Page({ params }) {
+  /**
+   * Getting the dybnamic value from the URL (the [number] part)
+   */
   const data = await getData(params.number);
 
   return (
