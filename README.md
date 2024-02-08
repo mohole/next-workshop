@@ -1,4 +1,4 @@
-# React + Next.js Workshop - 23/01/2024 @ Mohole
+# React + Next.js Workshop - 12/02/2024 @ Mohole
 
 ![workshop poster](docs/img/cover.webp)
 <small>_image generated with Midjourney v6_</small>
@@ -8,7 +8,7 @@
 - [Node.js](https://nodejs.org/) v18+
 - [VS Code](https://code.visualstudio.com/)
 - [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) (_browser extension_)
-- [*OPTIONAL*] [Vercel](https://vercel.com/) free account
+- [Vercel](https://vercel.com/) free account
 
 ## What we are using
 
@@ -16,12 +16,9 @@
 - [Next.js v14](https://nextjs.org/) - web framework for React
 - [modern-normalize](https://github.com/sindresorhus/modern-normalize) - normalize browser's default styles
 - [tailwindcss-preflight](https://github.com/grievouz/tailwindcss-preflight) - apply some basic global rules
+- [Vercel](https://vercel.com/) - application hosting and PostgreSQL database
 
-## API
-
-The API consumed by the application is [https://rickandmortyapi.com/](https://rickandmortyapi.com/) , which is a public and free API useful for learning and practice, based on the popular animated series.
-
-## Table of Contents
+<!-- ## Table of Contents
 
 - icebreaking
 - intro + high level concepts
@@ -33,7 +30,7 @@ The API consumed by the application is [https://rickandmortyapi.com/](https://ri
 - publish the project
 - [*optional*] live example integrating WordPress
 - Q&A
-- closing
+- closing -->
 
 ## Publishing
 
@@ -69,16 +66,23 @@ you can now check your application at `http://localhost:3000`.
 
 ## Where to go from here
 
-Feel free to enhance and add features to this project since it's just a sample to give you a glimpse on the basics functionalities of Nuxt and Vue:
+You can enhance the application in many ways:
 
-- design a better UI
-- integrate other APIs from the service
-- add filters for easily find content
-- enhance the pagination component
+- design a complete different UI
+- add separated lists/folders of tasks
+- add task creation date
+- add task deadline date
+- handle API errors
+- add tags or color label to tasks
+- search/sort tasks
+- use a different persistance solution (_Neon, MongoDB Atlas, Supabase, Appwrite, etc.._)
+- add authentication(_Supabase, Appwrite, Firebase_)
 
-or ultimately...
+or more in general:
 
-- re-use the code of this project with a **completely different data source** ([https://github.com/public-api-lists/public-api-lists](https://github.com/public-api-lists/public-api-lists))
+- use a pre-built UI library (_DaisyUI, Ant, etc..._)
+- use a different styling solution (_CSS Modules, Tailwind, etc.._)
+- adapt the concept and patterns to a different use case (_blog, catalog, contacts management, etc..._)
 
 ## License
 

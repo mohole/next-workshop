@@ -1,26 +1,30 @@
-import { ListCharacters } from "./components/ListCharacters"
-import { Pagination } from "./components/Pagination"
+import { sql } from "@vercel/postgres";
+import { Todos } from "./components/Todos";
 
-/**
- * This method get the data from the API on server side
- */
 const getData = async () => {
-  const res = await fetch('https://rickandmortyapi.com/api/character')
-  const data = await res.json()
-  return data
-}
+  /**
+   * The "classic" way to query the database in Next.js 12 and below
+   */
+  /*
+  const res = await fetch("/api/todo");
+  const data = await res.json();
+  return data;
+  */
 
-/**
- * The page component that will be rendered when the data is ready
- */
+  /**
+   * In Next.js 13+ server components, you can query the database directly
+   */
+  const { rows } = await sql`SELECT * FROM TodoList`;
+  return rows;
+};
+
 export default async function Home() {
-  const data = await getData()
+  const data = await getData();
 
   return (
     <main>
-      {/* <p>pages {data.info.pages}, characters {data.info.count}, page items {data.results.length}</p> */}
-      <ListCharacters characters={data.results} />
-      <Pagination prev={data.info.prev} next={data.info.next} />
+      <h1>todo app</h1>
+      <Todos data={data} />
     </main>
-  )
+  );
 }

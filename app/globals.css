@@ -1,30 +1,133 @@
-@import '../node_modules/modern-normalize/modern-normalize.css';
-@import '../node_modules/tailwindcss-preflight/preflight.css';
-
 /**
 * Global CSS variables
-* palette https://coolors.co/3c3744-090c9b-3066be-b4c5e4-fbfff1
-* --red created as complementary color by Copilot
 */
 :root {
   --grey: rgb(60, 55, 68);
   --white: #FBFFF1;
-  --strong: #090C9B;
-  --normal: #3066BE;
-  --light: #B4C5E4;
-  --red: #BE4030;
+  --light: #F0F0F0;
+  --primary: #2196F3;
+  --danger: #BE4030;
+
+  --unit: 8px;
+  --space-1: calc(var(--unit) * 2);
+  --space-2: calc(var(--unit) * 3);
+
+  --transition: all 0.3s ease-in-out;
 }
 
-/**
-* Global styles
-*/
+/* https://thedesignsystem.guide/design-tokens */
+
+@import '../node_modules/modern-normalize/modern-normalize.css';
+@import '../node_modules/tailwindcss-preflight/preflight.css';
+@import './switch.css';
+
 html {
-  background-color: var(--white);
+  background-color: var(--light);
   color: var(--grey);
+  font-size: 18px;
 }
 
 main {
-  width: 80%;
-  margin: 0 auto;
-  padding: 50px 0;
+  max-width: 550px;
+  margin: 45px auto;
+  padding: 0 30px;
+  
+  & h1 {
+    margin-bottom: var(--space-2);
+    font-weight: 700;
+    font-size: 2em;
+    text-transform: capitalize;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: var(--space-1);
+    border: 2px solid var(--grey);
+    border-radius: 5px;
+    font-size: 1em;
+    transition: var(--transition);
+
+    &:focus {
+      outline: var(--primary);
+      box-shadow: 0px 0px 15px var(--primary);
+      border-color: var(--primary);
+    }
+  }
+
+  small {
+    display: block;
+    margin: var(--space-1) 0;
+  }
+
+  & ul {
+
+    & li {
+      padding: var(--space-1);
+      background-color: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      margin: var(--space-2) 0;
+
+      & span {
+        display: flex;
+        gap: var(--space-1);
+        align-items: center;
+
+        &.done {
+          opacity: 0.5;
+          text-decoration: line-through;
+        }
+
+        & input[type="checkbox"] {
+          --size: 20px;
+
+          appearance: none;
+          background-color: var(--white);
+          border: 2px solid var(--grey);
+          border-radius: 4px;
+          display: inline-block;
+          width: var(--size);
+          height: var(--size);
+          position: relative;
+          vertical-align: middle;
+          cursor: pointer;
+          margin-right: var(--space-1);
+        }
+        
+        & input[type="checkbox"]:checked {
+          background-color: var(--grey);
+          border-color: var(--grey);
+        }
+        
+        & input[type="checkbox"]:checked::after {
+          --size: 7px;
+
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: var(--size);
+          height: var(--size);
+          background-color: var(--white);
+          border-radius: 2px;
+        }
+
+        & button {
+          margin-left: auto;
+          background-color: var(--danger);
+          color: var(--white);
+          padding: 5px 10px;
+          border-radius: 5px;
+          transition: var(--transition);
+          border: 1px solid var(--danger);
+
+          &:hover {
+            box-shadow: 0px 0px 15px var(--danger);
+            border: 1px solid rgba(0,0,0,0.4);
+          }
+        }
+      }
+    }
+  }
 }
