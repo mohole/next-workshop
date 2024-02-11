@@ -1,15 +1,12 @@
 import { sql } from "@vercel/postgres";
 import { Todos } from "./components/Todos";
+import { revalidatePath } from "next/cache";
 
 const getData = async () => {
   /**
-   * The "classic" way to query the database in Next.js 12 and below
+   * Revalidate the path when the data changes (avoid cache)
    */
-  /*
-  const res = await fetch("/api/todo");
-  const data = await res.json();
-  return data;
-  */
+  revalidatePath("/");
 
   /**
    * In Next.js 13+ server components, you can query the database directly
